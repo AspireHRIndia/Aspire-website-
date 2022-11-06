@@ -2,7 +2,6 @@
 {% block title %}<title>Aspire HR India - Home</title>{% endblock title %}
 {% load static %}
 {% block content %}
-<link href="{% static 'website_hr/css/job.css' %}" rel="stylesheet">
 
   <main id="main">
 
@@ -29,55 +28,17 @@
         </div>
 
         <div class="row gy-5">
-
+          
+          {% for service in services %}
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
+            <div class="icon flex-shrink-0"><i class="{{service.logo_icon}}" style="color: {{service.logo_color}};"></i></div> 
             <div>
-              <h4 class="title"><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="#" class="stretched-link">{{ service.name }}</a></h4>
+              <p class="description">{{service.description}}</p>
             </div>
           </div>
           <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" style="color: #15a04a;"></i></div>
-            <div>
-              <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart" style="color: #d90769;"></i></div>
-            <div>
-              <h4 class="title"><a href="#" class="stretched-link">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars" style="color: #15bfbc;"></i></div>
-            <div>
-              <h4 class="title"><a href="#" class="stretched-link">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" style="color: #f5cf13;"></i></div>
-            <div>
-              <h4 class="title"><a href="#" class="stretched-link">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" style="color: #1335f5;"></i></div>
-            <div>
-              <h4 class="title"><a href="#" class="stretched-link">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div><!-- End Service Item -->
+          {% endfor %}
 
         </div>
 
@@ -105,205 +66,6 @@
               </div>
             </div>
           </div><!-- End Card Item -->
-
-
-
-
-
-
-
-
-
-
-
-          <!-- jobs listing -->
-
-
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
-
-          <section class="container">
-                      <div class="row">
-                           <div class="col-lg-10 mx-auto mb-4">
-                              <div class="section-title text-center ">
-                                  <h3 class="top-c-sep">Grow your career with us</h3>
-                                  <p>Lorem ipsum dolor sit detudzdae amet, rcquisc adipiscing elit. Aenean socada commodo
-                                      ligaui egets dolor. Nullam quis ante tiam sit ame orci eget erovtiu faucid.</p>
-                              </div>
-                          </div>
-                      </div>
-          
-                      <div class="row">
-                          <div class="col-lg-10 mx-auto">
-                              <div class="career-search mb-60">
-          
-                                  <form action="#" class="career-form mb-60">
-                                      <div class="row">
-                                          <div class="col-md-6 col-lg-3 my-3">
-                                              <div class="input-group position-relative">
-                                                  <input type="text" class="form-control" placeholder="Enter Your Keywords" id="keywords">
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 col-lg-3 my-3">
-                                              <div class="select-container">
-                                                  <select class="custom-select">
-                                                      <option selected="">Location</option>
-                                                      <option value="1">Jaipur</option>
-                                                      <option value="2">Pune</option>
-                                                      <option value="3">Bangalore</option>
-                                                  </select>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 col-lg-3 my-3">
-                                              <div class="select-container">
-                                                  <select class="custom-select">
-                                                      <option selected="">Select Job Type</option>
-                                                      <option value="1">Ui designer</option>
-                                                      <option value="2">JS developer</option>
-                                                      <option value="3">Web developer</option>
-                                                  </select>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6 col-lg-3 my-3">
-                                              <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
-                                                  Search
-                                              </button>
-                                          </div>
-                                      </div>
-                                  </form>
-          
-                                  <div class="filter-result">
-                                      <p class="mb-30 ff-montserrat">Total Job Openings : 89</p>
-          
-                                      <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                          <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                              <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                                  FD
-                                              </div>
-                                              <div class="job-content">
-                                                  <h5 class="text-center text-md-left">Front End Developer</h5>
-                                                  <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="job-right my-4 flex-shrink-0">
-                                              <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                          </div>
-                                      </div>
-          
-                                      <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                          <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                              <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                                  UX
-                                              </div>
-                                              <div class="job-content">
-                                                  <h5 class="text-center text-md-left">Ui/Ux Developer</h5>
-                                                  <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="job-right my-4 flex-shrink-0">
-                                              <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                          </div>
-                                      </div>
-          
-                                      <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                          <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                              <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                                  GD
-                                              </div>
-                                              <div class="job-content">
-                                                  <h5 class="text-center text-md-left">Graphic Designer</h5>
-                                                  <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="job-right my-4 flex-shrink-0">
-                                              <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                          </div>
-                                      </div>
-          
-                                      <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                          <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                              <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                                  JS
-                                              </div>
-                                              <div class="job-content">
-                                                  <h5 class="text-center text-md-left">Javascript Developer</h5>
-                                                  <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                                      </li>
-                                                      <li class="mr-md-4">
-                                                          <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="job-right my-4 flex-shrink-0">
-                                              <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                          </div>
-                                      </div>
-          
-                                  </div>
-                              </div>
-          
-                              <!-- START Pagination -->
-                              <nav aria-label="Page navigation">
-                                  <ul class="pagination pagination-reset justify-content-center">
-                                      <li class="page-item disabled">
-                                          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                              <i class="zmdi zmdi-long-arrow-left"></i>
-                                          </a>
-                                      </li>
-                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                      <li class="page-item d-none d-md-inline-block"><a class="page-link" href="#">2</a></li>
-                                      <li class="page-item d-none d-md-inline-block"><a class="page-link" href="#">3</a></li>
-                                      <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                      <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                      <li class="page-item">
-                                          <a class="page-link" href="#">
-                                              <i class="zmdi zmdi-long-arrow-right"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </nav>
-                              <!-- END Pagination -->
-                          </div>
-                      </div>
-          
-                  </section> <!-- end job listing -->
-
-
 
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">

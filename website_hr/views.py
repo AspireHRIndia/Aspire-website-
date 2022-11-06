@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def index(request):
@@ -45,10 +45,18 @@ def portfolio(request):
     return render(request, 'portfolio.html', context)
 
 def services(request):
+    services = Services.objects.all()
     context = {
-        
+        'services' : services
     }
     return render(request, 'services.html', context)
+
+def jobs(request):
+    jobs = Job.objects.all()
+    context = {
+        'jobs': jobs,
+    }
+    return render(request, 'jobs.html', context)
 
 def team(request):
     context = {
