@@ -50,12 +50,12 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a href="{% url 'home' %}" class="active">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'jobs' %}">Jobs</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'team' %}">Team</a></li>
-            <li class="dropdown"><a href="#"><span>Blog & Portfolio</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <li><a href="{% url 'home' %}" class="{% if nbar == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'about' %}" class="{% if nbar == 'about' %}active{% endif %}">About</a></li>
+            <li><a href="{% url 'jobs' %}" class="{% if nbar == 'jobs' %}active{% endif %}">Jobs</a></li>
+            <li><a href="{% url 'services' %}" class="{% if nbar == 'services' %}active{% endif %}">Services</a></li>
+            <li><a href="{% url 'team' %}" class="{% if nbar == 'team' %}active{% endif %}">Team</a></li>
+            <li class="dropdown"><a href="#" class="{% if nbar == 'blog' or nbar == 'port' or nbar == 'portDetails' or nbar == 'blogDetails' %}active{% endif %}"><span>Blog & Portfolio</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul>
                 <li class="dropdown"><a href="#"><span>Portfolio</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                   <ul>
@@ -71,7 +71,7 @@
                   </li>
               </ul>
             </li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'contact' %}" class="{% if nbar == 'contact' %}active{% endif %}">Contact</a></li>
           </ul>
         </nav><!-- .navbar -->
   
