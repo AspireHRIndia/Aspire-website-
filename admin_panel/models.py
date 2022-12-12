@@ -16,6 +16,7 @@ class Tag(models.Model):
 
 
 class Job(models.Model):
+    job_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     description = models.TextField()
@@ -33,13 +34,13 @@ class Job(models.Model):
     vacancy = models.IntegerField(default=1)
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["job_id"]
 
     def get_absolute_url(self):
-        return reverse("jobs:jobs-detail", args=[self.id])
+        return reverse("jobs:jobs-detail", args=[self.job_id])
 
     def __str__(self):
-        return self.title
+        return f"{str(self.job_id)} {str(self.title)}"
 
 
 

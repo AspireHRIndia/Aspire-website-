@@ -13,5 +13,7 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('team/', views.team, name='team'),
     path('jobs/', views.jobs, name='jobs'),
+    path('jobDetail/', views.jobDetail, name='jobDetails'),
+    path('jobDetail/job_id=<int:job_id>/', views.jobDetail, name='jobDetails'),
     
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from admin_panel.models import *
 # Create your views here.
 
@@ -59,6 +59,17 @@ def jobs(request):
         'nbar': 'jobs'
     }
     return render(request, 'jobs.html', context)
+
+
+def jobDetail(request, job_id=None):
+    job = get_object_or_404(Job, job_id=job_id)
+    print(job)
+
+    context = {
+        'job': job,
+    }
+    return render(request, 'jobDetails.html', context)
+
 
 def team(request):
     context = {

@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-10">
                                     <h4 class="job__title"><a
-                                            href="#">{{ job.title }}</a></h4>
+                                            href="{% url 'jobDetails' job.job_id %}">{{ job.title }}</a></h4>
                                     <p class="job__company">
                                         {{ job.company_name }}
                                     </p>
