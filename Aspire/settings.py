@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'website_hr',
+    'admin_panel',
 ]
 
 MIDDLEWARE = [
