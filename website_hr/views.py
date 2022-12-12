@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import *
+from admin_panel.models import *
 # Create your views here.
 
 def index(request):
