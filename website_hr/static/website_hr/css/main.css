@@ -184,6 +184,39 @@ section {
   opacity: 1;
 }
 
+
+/*--------------------------------------------------------------
+#chat
+--------------------------------------------------------------*/
+.chat {
+  position: fixed;
+
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.chat i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.chat:hover {
+  background: rgba(86, 184, 230, 0.8);
+  color: #fff;
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
