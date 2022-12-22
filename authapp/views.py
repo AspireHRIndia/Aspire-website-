@@ -20,7 +20,7 @@ def user_login(request):
             return redirect('home')
         else:
             messages.error(request, "Some error occured while logging in. Please try again...")
-            return redirect('login')
+            return redirect('user_login')
 
     context = {
        
