@@ -3,6 +3,10 @@
 *.pot
 *.pyc
 __pycache__
+Aspire/__pycache__
+website_hr/__pycache__
+authapp/__pycache__
+admin_panel/__pycache__
 db.sqlite3
 media
 
