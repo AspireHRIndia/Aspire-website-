@@ -20,6 +20,34 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
+    <section class="job-form-section job-form-section--compressed">
+        <div class="container">
+            <h4 class="heading">Find a <span class="accent">job </span> you will <span class="accent">love</span></h4>
+            <form id="job-main-form" method="get" class="job-main-form">
+                <div class="controls">
+                    <div class="row align-items-end">
+                        <div class="col-sm-1 col-lg-2"></div>
+                        <div class="col-sm-5 col-lg-4 form-group">
+                            <label for="profession">Profession</label>
+                            <input type="text" id="profession" name="profession"
+                                   placeholder="Profession you are looking for" class="form-control">
+                        </div>
+                        <div class="col-sm-5 col-lg-4 form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="Any particular location?"
+                                   value="" class="form-control">
+                        </div>
+                        <div class="col-sm-1 col-lg-2 form-group">
+                            <button type="submit" class="btn btn-outline-white-primary job-main-form__button">
+                                <i class="fa fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <section>
         <div class="container">
             <h3 class="heading">We have found <span class="accent">{{ jobs.count }}</span>{% if jobs.count == 1 %} job{% else %} jobs{% endif %}</h3>

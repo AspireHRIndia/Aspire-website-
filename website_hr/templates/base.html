@@ -28,6 +28,11 @@
   <link href="{% static 'website_hr/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
   <link href="{% static 'website_hr/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
 
+
+  <script src="https://unpkg.com/@babel/polyfill@7.6.0/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
   <!-- Template Main CSS File -->
   <link href="{% static 'website_hr/css/main.css' %}" rel="stylesheet">
 
@@ -181,10 +186,60 @@ Error!
 
 
 <!---chatbot-->
-  <link href="{% static 'website_hr/css/chatbot.css' %}" rel="stylesheet">
+
+
+
+  <link href="{% static 'website_hr/bot/css/bot.css' %}" rel="stylesheet">
+  <link href="{% static 'website_hr/bot/css/chatbot.css' %}" rel="stylesheet">
+ 
+  <link href="{% static 'website_hr/bot/css/popup.css' %}" rel="stylesheet">
+  
+  <button class="chat-open-dialog">
+   <span class="bi bi-chat"></span>
+  </button>
+
+  <button class="chat-button-destroy">
+    <span class="fa fa-close"></span>
+  </button>
+
+  <div class="chat-popup" id="bot-container">
+    <div id="bot-inner">
+      <div id="bot"></div>
+    </div>
+  </div>
+  <script type="text/babel" data-presets="es2015,es2016,es2017" src="{% static 'website_hr/bot/js/conversation.js' %}"></script>
+ <script type="text/babel" data-presets="es2015,es2016,es2017" src="{% static 'website_hr/bot/js/bot.js' %}"></script>
+ 
+
   <a class="chat d-flex align-items-center justify-content-center">
     <i class="bi bi-chat"></i>
   </a>
+
+ 
+  <script type="text/javascript">
+    $(function () {
+      $(".chat-open-dialog").click(function () {
+        $(this).toggleClass("active");
+        $(".chat-popup").toggleClass("active");
+        $(".chat-button-destroy").toggleClass("active");
+      });
+    });
+
+    $(function () {
+      $(".chat-button-start").click(function () {
+        $(this).toggleClass("active");
+        $(".chat-popup").toggleClass("chat-init");
+      });
+    });
+
+    $(function () {
+      $(".chat-button-destroy").click(function () {
+        $(".chat-popup").removeClass("active");
+        $(".chat-open-dialog").removeClass("active");
+        $(this).removeClass("active");
+      });
+    });
+  </script>
 <!--end chatbot-->
 
 
