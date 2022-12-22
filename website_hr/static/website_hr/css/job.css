@@ -67,7 +67,7 @@ section.section-divider .btn {
   width: 100px;
   height: 2px;
   margin: 20px auto 20px;
-  background: #2b90d9
+  background: #7734e7;
 }
 
 .img-responsive {
@@ -110,11 +110,11 @@ button i.fa {
 }
 
 .required {
-  color: #2b90d9
+  color: #7734e7;
 }
 
 .accent {
-  color: #2b90d9
+  color: #7734e7;
 }
 
 .text-uppercase {
@@ -172,7 +172,7 @@ textarea.form-control {
 }
 
 .btn-outline-light:hover {
-  color: #2b90d9 !important
+  color: #7734e7 !important
 }
 
 .btn-outline-light:focus {
@@ -198,12 +198,12 @@ textarea.form-control {
 }
 
 #accordion .card {
-  border-color: #2b90d9;
+  border-color: #7734e7;
   margin-bottom: 10px
 }
 
 #accordion .card .card-header {
-  background: #2b90d9;
+  background: #7734e7;
   padding: 0
 }
 
@@ -235,7 +235,7 @@ strong {
 
 .bootstrap-select .dropdown-toggle:focus,
 .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
-  outline: 1px auto #2b90d9 !important
+  outline: 1px auto #7734e7 !important
 }
 
 .contact-form label {
@@ -1053,7 +1053,7 @@ strong {
 }
 
 .job-listing.job-listing--featured {
-  border-left: solid 5px #2b90d9;
+  border-left: solid 5px #7734e7;
   padding-left: 15px
 }
 
@@ -1210,7 +1210,7 @@ strong {
 }
 
 .map-custom-popup .leaflet-popup-content a {
-  color: #2b90d9
+  color: #7734e7;
 }
 
 .map-custom-popup .popup-venue {
@@ -2424,13 +2424,13 @@ body {
 }
 
 a {
-  color: #2b90d9;
+  color: #7734e7;
   text-decoration: none
 }
 
 a:focus,
 a:hover {
-  color: #1c669c;
+  color: rgb(130, 85, 207);
   text-decoration: underline
 }
 

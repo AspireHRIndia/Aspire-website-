@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="admin_panel/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title>{% block title %}Login{% endblock title %}</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicons -->
+    <link href="{% static 'website_hr/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'website_hr/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{% static 'admin_panel/vendor/fonts/boxicons.css' %}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'admin_panel/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'admin_panel/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'admin_panel/css/demo.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'admin_panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="{% static 'admin_panel/vendor/css/pages/page-auth.css' %}" />
+    <!-- Helpers -->
+    <script src="{% static 'admin_panel/vendor/js/helpers.js' %}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'admin_panel/js/config.js' %}"></script>
+    <!-- Toastr -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'website_hr/css/toastr.min.css' %}" media="all">
+    <script type="text/javascript" src="{% static 'website_hr/js/toastr.js' %}"></script>  
+    </head>
+  </head>
+
+  <body>
+        <!-- Messages/Toast Start -->
+        {% if messages %}
+        {% for message in messages %}
+          
+              <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        
+        {% endfor %}
+        {% endif %}
+        <!-- Messages/Toast end -->
+
+    {% block content %}
+    Error!
+    {% endblock content %}
+
+
+
+    {% block js %}
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'admin_panel/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'admin_panel/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'admin_panel/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'admin_panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+
+    <script src="{% static 'admin_panel/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="{% static 'admin_panel/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {% endblock js %}
+    
+  </body>
+</html>

@@ -30,6 +30,11 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'website_hr/css/main.css' %}" rel="stylesheet">
 
+  <!-- Toastr -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'website_hr/css/toastr.min.css' %}" media="all">
+  <script type="text/javascript" src="{% static 'website_hr/js/toastr.js' %}"></script>  
+
 </head>
 
 <body class="page-index">
@@ -72,11 +77,27 @@
               </ul>
             </li>
             <li><a href="{% url 'contact' %}" class="{% if nbar == 'contact' %}active{% endif %}">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'user_logout' %}"><span><i class="bi bi-person" style="font-size:20px;"></i>&nbsp;Logout</span></a></li>
+            {% else %}
+            <li><a href="{% url 'user_login' %}"><span><i class="bi bi-person" style="font-size:20px;"></i>&nbsp;Login</span></a></li>
+            {% endif %}
+           
           </ul>
         </nav><!-- .navbar -->
   
       </div>
     </header><!-- End Header -->
+    
+    <!-- Messages/Toast Start -->
+    {% if messages %}
+        {% for message in messages %}
+          
+              <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        
+        {% endfor %}
+    {% endif %}
+    <!-- Messages/Toast end -->
 
 {%  block content %}
 Error!
@@ -162,6 +183,7 @@ Error!
 
   <!-- Template Main JS File -->
   <script src="{% static 'website_hr/js/main.js' %}"></script>
+
 
 </body>
 

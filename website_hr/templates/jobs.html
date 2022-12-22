@@ -11,7 +11,7 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'website_hr/img/services-header.jpg' %}');">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        <h2>Jobs</h2>
+        <h2 style='text-transform:none;' >Jobs</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>Jobs</li>
@@ -22,7 +22,7 @@
 
     <section>
         <div class="container">
-            <h3 class="heading">We have found <span class="accent">{{ jobs.count }}</span> jobs</h3>
+            <h3 class="heading">We have found <span class="accent">{{ jobs.count }}</span>{% if jobs.count == 1 %} job{% else %} jobs{% endif %}</h3>
             {% for job in jobs %}
                 <div class="job-listing">
                     <div class="row">
@@ -39,7 +39,7 @@
                                         {{ job.company_name }}
                                     </p>
                                     {% for tag in job.tags.all %}
-                                        <span style="color: #ffffff;" class="badge featured-badge badge-info">{{ tag.name }}</span>
+                                        <span style="color: #ffffff;" class="badge featured-badge badge-dark">{{ tag.name }}</span>
                                     {% endfor %}
                                 </div>
                             </div>

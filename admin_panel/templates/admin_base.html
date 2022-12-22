@@ -20,8 +20,9 @@
 
     <meta name="description" content="" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'admin_panel/img/favicon/favicon.ico' %} " />
+      <!-- Favicons -->
+    <link href="{% static 'website_hr/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'website_hr/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,9 +53,26 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'admin_panel/js/config.j' %}s"></script>
-  </head>
+
+      <!-- Toastr -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'website_hr/css/toastr.min.css' %}" media="all">
+    <script type="text/javascript" src="{% static 'website_hr/js/toastr.js' %}"></script>  
+    </head>
 
   <body>
+
+        <!-- Messages/Toast Start -->
+        {% if messages %}
+        {% for message in messages %}
+          
+              <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        
+        {% endfor %}
+        {% endif %}
+    <!-- Messages/Toast end -->
+
+
     <!-- Layout wrapper -->
     {% block navbar %}
     <div class="layout-wrapper layout-content-navbar">

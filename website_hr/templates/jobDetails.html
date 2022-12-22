@@ -14,11 +14,11 @@
             <div class="job-detail-description"><i class="fa fa-map-marker job__location"> </i>
                 {{ job.location }} | Posted {{ job.created_at|timesince }} ({{ job.created_at }}) |
                 {% if job.type == '1' %}
-                    <span class="badge featured-badge badge-success">Full time</span>
+                    <span class="badge text-bg-dark">Full time</span>
                 {% elif job.type == '2' %}
-                    <span class="badge featured-badge badge-primary">Part time</span>
+                    <span class="badge text-bg-dark">Part time</span>
                 {% else %}
-                    <span style="color: black;" class="badge featured-badge badge-warning">Internship</span>
+                    <span class="badge text-bg-dark">Internship</span>
                 {% endif %}
             </div>
         </div>
@@ -36,7 +36,7 @@
                     </h5>
                     Tags:
                     {% for tag in job.tags.all %}
-                        <span style="color: #ffffff;" class="badge featured-badge badge-secondary">{{ tag.name }}</span>
+                        <span class="badge rounded-pill text-bg-primary">{{ tag.name }}</span>
                     {% endfor %}
                     <blockquote class="blockquote">
                         <p>{{ job.description | safe }}</p>
