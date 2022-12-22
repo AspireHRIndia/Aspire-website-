@@ -83,6 +83,10 @@
             {% else %}
             <li><a href="{% url 'user_login' %}"><span><i class="bi bi-person" style="font-size:20px;"></i>&nbsp;Login</span></a></li>
             {% endif %}
+
+            {% if user.is_superuser %}
+            <li><a href="{% url 'admin_home' %}"><span><i class="bi bi-person" style="font-size:20px;"></i>&nbsp;Admin</span></a></li>
+            {% endif %}
            
           </ul>
         </nav><!-- .navbar -->

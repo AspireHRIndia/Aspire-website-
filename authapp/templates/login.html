@@ -73,7 +73,7 @@
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="auth-register-basic.html">
+                <a href="{% url 'user_register' %}">
                   <span>Create an account</span>
                 </a>
               </p>
@@ -84,6 +84,3 @@
       </div>
     </div>
 {% endblock content %}
-
-{% block js %}
-{% endblock js %}
