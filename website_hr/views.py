@@ -71,6 +71,15 @@ def jobDetail(request, job_id=None):
     }
     return render(request, 'jobDetails.html', context)
 
+def jobDetail2(request, job_id=None):
+    job = get_object_or_404(Job, job_id=job_id)
+    print(job)
+
+    context = {
+        'job': job,
+    }
+    return render(request, 'jobDetails2.html', context)
+
 
 def team(request):
     context = {

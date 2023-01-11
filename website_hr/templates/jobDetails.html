@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}<title>Aspire HR India - Jobs Deatils</title>{% endblock title %}
+{% block ifsticky %}sticked{% endblock ifsticky %}
 {% load static %}
 {% load humanize %}
 
@@ -8,6 +9,7 @@
 
     <section class="bg-light-gray">
         <div class="container">
+
             <h1 class="heading">{{ job.title }}<br>
                 <small>at <a href="#"> {{ job.company_name }}</a></small>
             </h1>
@@ -62,18 +64,20 @@
                     <h4>About {{ job.company_name }}</h4>
                     <p class="job-detail__company-description">{{ job.company_description | safe }}</p>
                     <p class="job-detail__social social social--outline">
-                        <a href="{{ job.website }}" data-toggle="tooltip" data-placement="top" title="Website"
+                        <a href="{{job.website}}" data-toggle="tooltip" data-placement="top" title="Website"
                            class="link">
-                            <i class="fa fa-link"></i>
+                           <i class="bi bi-link-45deg"></i>
                         </a>
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter" class="twitter">
-                            <i class="fa fa-twitter"></i>
+                            <i class="bi bi-twitter"></i>
                         </a>
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook" class="facebook">
-                            <i class="fa fa-facebook"></i>
+                            <i class="bi bi-facebook"></i>
                         </a>
                     </p>
-                    {% comment %} {% if user.is_authenticated and user.role == 'employee' %}
+
+                    
+                   {% if user.is_authenticated and user.role == 'employee' %}
                         <div class="job-detail__apply-top">
                             {% if is_applied %}
                                 <input type="button" class="btn btn-outline-white-primary" value="Already applied"/>
@@ -86,8 +90,7 @@
                                 </form>
                             {% endif %}
                         </div>
-                    {% endif %} {% endcomment %}
-                </div>
+                    {% endif %}
             </div>
         </div>
     </section>

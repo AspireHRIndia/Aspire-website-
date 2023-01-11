@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}<title>Aspire HR India - Jobs Deatils</title>{% endblock title %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+
+<main id="main">
+
+    <div class="container">
+        <div class="btn-group-vertical" role="group" aria-label="">
+            <button type="button" class="btn btn-secondary">First One</button>
+            <button type="button" class="btn btn-secondary">Second One</button>
+            <div class="btn-group" role="group">
+                <button id="dropdownId" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        More
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">First Dropdown</a>
+                    <a class="dropdown-item" href="#">Second Dropdown</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main><!-- End #main -->
+
+{% endblock %}
